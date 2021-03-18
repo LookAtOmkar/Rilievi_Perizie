@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Security-Policy"
+            content="default-src *;
+            script-src * 'unsafe-inline';
+            style-src * 'unsafe-inline';
+            img-src * data: content:;"
+        >
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="color-scheme" content="light dark">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>	
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="cordova.js"></script>
+        <script src="js/libreria.js"></script>
+        <script src="js/index.js"></script>
+        <title>Rilievi E Perizie</title>
+    </head>
+    <body>
+        <div id="wrapper" class="container-responsive">
+            <h1 class="title font-weight-bolder font-italic">Rilievi e Perizie</h1>
+            <div id="scattaFoto" class="col-xl-6">
+                <h5 class="title m-2"> Scatta una foto </h5>
+                <img id="fotocamera"src="img/fotocamera.png" class="mb-2">
+                <img id="CercaFoto" src="img/gallery.png" class="mb-2"/>
+            </div>
+            <div id="content" class="flex-row mt-2">
+                <div id="imageTaken" class="col-xl-6">
+                </div>
+                <div id="map" class="col-xl-6"></div>
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdWgu3MKgdqJyBFqh7bEAOmXpzwWRgVL0">
+                </script>
+            </div>
+            <div class="col-xl-6">
+                <textarea id ="Note" placeholder="Inserisci qualche nota"></textarea>
+            </div>
+            <button id="upload" class="btn btn-success m-3">UPLOAD</button>
+
+        </div>
+        <footer>
+            <p>
+                Creato da RATHORE OMKAR SINGH 5B INF 
+            </p>
+            <p>------- I.I.S.G. VALLAURI - FOSSANO ------</p>
+        </footer>
+    </body>
+</html>
