@@ -23,9 +23,9 @@
 "use strict";
 
 
-let _imgURL; //url dell'immagine appena scattata
-let lat;
-let lng;
+let _imgURL = ""; //url dell'immagine appena scattata
+let lat = "";
+let lng = "";
 
 $(document).ready(function(){
     document.addEventListener('deviceready', onDeviceReady);
@@ -75,7 +75,7 @@ $(document).ready(function(){
                 _img.prop("src",img);
                 _imgURL = img;
             }
-            _img.appendTo(_wrapper);
+            _img.appendTo($("#imageTaken"));
             // DI CONSEGUENZA , UNO CLICCHERA' SUL BOTTONE UPLOAD, E AUTOMATICAMENTE VERRA' CARICATO SU CLOUD
             
             //Dopo che ho scattato la foto, voglio che mi mostri subito la posizione di dove l'ho scattato, sulla mappa.
@@ -85,28 +85,12 @@ $(document).ready(function(){
 
 
 
-        function uploadImage(img,_lat,_lng){
-            if(_textArea.html() != "")
-            {
-                let _note = _textArea.html(); 
-                let request = inviaRichiesta("POST","/api/upload",{"img":img,"lat":_lat,"lng":_lng,"note":_note}); 
-                request.fail(errore);
-                request.done(function(data){
-                    alert("Upload effettuato correttamente");
-                    console.log(data);
-                })
-            }
-            else
-                alert("Mancano le note");
-            
-        }
 
         //GEOLOCATION
-
-        
-        /********PROVA*****/
         let currentMap = null;
         let currentMarker = null;
+
+        /* PROVA
         let pos = google.maps.LatLng(45,4773,9,1815);
         let mapOptions={
             "zoom":8,
@@ -121,8 +105,8 @@ $(document).ready(function(){
                 "map": currentMap,
                 "title":"My current position"
             });
+        */
 
-        /*******************/
 
 
         function geolocationSuccess(position){
@@ -170,6 +154,26 @@ $(document).ready(function(){
 
         
         $("#upload").on("click",uploadImage(_imgURL,lat,lng));
+
+
+
+
+        function uploadImage(img,_lat,_lng){
+            if(_textArea.html() != "")
+            {
+                let _note = _textArea.html(); 
+                let request = inviaRichiesta("POST","/api/upload",{"img":img,"lat":_lat,"lng":_lng,"note":_note}); 
+                request.fail(errore);
+                request.done(function(data){
+                    alert("Upload effettuato correttamente");
+                    console.log(data);
+                })
+            }
+            else
+                alert("Mancano le note");
+            
+        }
+
 
         /**************BASIC FUNCTIONS********/
 
