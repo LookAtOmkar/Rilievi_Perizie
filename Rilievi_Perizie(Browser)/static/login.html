@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/login.css">
+
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/libreria.js"></script>
+        <script  type="text/javascript" src="js/login.js"></script>
+	
+        <title>Rilievi & Perizie</title>
+    </head>
+    <body>
+		<div class="wrapper fadeInDown">
+		  <div id="formContent">
+			<!-- Tabs Titles -->
+
+			<!-- Icon -->
+			<div class="fadeIn first">
+			  <img src="img/vallauri.png" id="icon" alt="User Icon" />
+			</div>
+
+			<!-- Login Form -->
+			<form method="POST">
+			  <input type="text" class="fadeIn first" name="name" id="name" placeholder="name" required/>
+			  <input type="text" class="fadeIn second" name="surname" id="surname" placeholder="surname" required/>
+			  <input type="text"  class="fadeIn second" name="username" id="username"  placeholder="username" required>
+			  <input type="password" class="fadeIn third"  name="pwd" id="pwd"   placeholder="password" required>
+			  <input type="email" class="fadeIn third" name="mail" id="mail"   placeholder="email" >
+			  <input type="button" class="fadeIn fourth" value="Log In" id="LogIn">
+			</form>
+
+			<!-- Remind Passowrd -->
+			<div id="formFooter">
+			  <a class="underlineHover" href="#">Create an Account</a>
+			</div>
+			
+		  </div>
+		</div>
+    </body>
+</html>

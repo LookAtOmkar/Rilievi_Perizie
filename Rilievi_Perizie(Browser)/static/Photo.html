@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://use.fontawesome.com/releases/v5.15.2/js/all.js" data-auto-replace-svg="nest"></script>
+        <script type="text/javascript" src="js/libreria.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+
+        <script>
+          $(document).ready(function(){
+
+
+            $(".photos").hover(function(){
+              $(this).addClass("shadow-lg");
+            },function(){
+              $(".photos").removeClass("shadow-lg");
+            })
+          })
+          
+        </script>
+
+
+
+        <title>Rilievi E Perizie</title>
+    </head>
+    <body>
+        <div id="wrapper" class="container-responsive">
+            <nav class="nav navbar navbar-collapse  navbar-expand-sm ">
+                <a class="navbar-brand" href="index.html">
+                <img src="img/vallauri.png" alt="Logo" style="width:50px;">
+                <ul class="nav navbar-nav">
+                    <li class="navbar-item">
+                        <a class="navbar-link" href="#" data-toggle="modal" data-target="#myProfile">Profilo</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a class="navbar-link" href="#">Foto_Scattate</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a class="navbar-link" href="Luoghi.html">Luoghi </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            
+            <h1 class="title font-weight-bolder font-italic">Rilievi e Perizie</h1>
+        
+            <div id="MainContent" class="container-responsive col-xl-12" >
+                <div  id="items" class="  m-5" style="display: flex; flex-wrap:wrap;">
+                    <div class="photos col-xl-6 mr-3 shadow mg-5 rounded" style="width: 100px;"> 
+                        <img src="img/vallauri.png " class="img-rounded img-responsive" height="100">
+                    </div>
+                    <div class="photos col-xl-6 mr-3 shadow mg-5 rounded" style="width: 100px;"> 
+                      <img src="img/vallauri.png " class="img-rounded img-responsive" height="100">
+                  </div>
+                </div>
+                <div class="col-xl-12">
+                    <button class="btn btn-primary" id="GetPhotos">GET ALL PHOTOS</button>
+                </div>
+            </div>
+
+            <!----------------------------------FINESTRA MODALE PER IL PROFILO--------------------------->
+            <div class="modal fade" id="myProfile">
+              <div class="modal-dialog modal-lg modal-dialog-scrollable ">
+                <div class="modal-content">
+
+                  <!-- Modal Header -->
+                  <div class="modal-header col-sl-6">
+                    <img src="img/profile.jpg" class="rounded-circle mx-auto d-block shadow-lg " height="60" width="60" alt="Avatar">
+                    <h4 class="modal-title" style="text-align: center; margin: auto;">WELCOME ADMINISTRATOR</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+
+                  <!-- Modal body -->
+                  <div class="modal-body">
+                    <!--Details-->
+                    <h4>Create an Account:</h4>
+                    <div class="card">
+                        <div class="d-flex flex-row">
+                          <div class=" col-sm-3 border-bottom border-right">
+                            <h5>NOME</h5>
+                          </div>
+                          <div class="col-sm-9 border-bottom border-left ">
+                            <input type="text" class="form-control"  id="nome" name="nome" placeholder="INSERISCI IL NOME"/>
+                          </div>
+                        </div>
+
+                        <div class="d-flex flex-row">
+                          <div class=" col-sm-3 border-bottom border-right">
+                            <h5>COGNOME</h5>
+                          </div>
+                          <div class="col-sm-9 border-bottom border-left">
+                            <input type="text" class="form-control" id="cognome" name="cognome" placeholder="INSERISCI IL COGNOME"/>
+                          </div>
+                        </div>
+
+                        <div class="d-flex flex-row">
+                          <div class=" col-sm-3 border-bottom border-right">
+                            <h5>USERNAME</h5>
+                          </div>
+                          <div class="col-sm-9 border-bottom border-left">
+                            <input type="text" class="form-control" id="username" name="username" placeholder="INSERISCI LO USERNAME"/>
+                          </div>
+                        </div>
+
+                        <div class="d-flex flex-row">
+                          <div class=" col-sm-3 border-bottom border-right">
+                            <h5>MAIL</h5>
+                          </div>
+                          <div class="col-sm-9 border-bottom border-left">
+                            <input type="email" class="form-control" id="mail" name="mail" placeholder="NAME@EXAMPLE.COM"  >
+                          </div>
+                        </div>
+
+                        <div class="d-flex flex-row">
+                          <div class=" col-sm-3 border-bottom border-right">
+                            <h5>PASSWORD</h5>
+                          </div>
+                          <div class="col-sm-9 border-bottom border-left">
+                            <input type="password" class="form-control" id="pwd" name="pwd" placeholder="INSERISCI LA PASSWORD"/>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+
+                  <!-- Modal footer -->
+                  <div class="modal-footer">
+                    <button type="button"  id="btnCrea"class="btn btn-success">CREA</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+        </div>
+        <footer>
+            <p>
+                Creato da RATHORE OMKAR SINGH 5B INF 
+            </p>
+            <p>------- I.I.S.G. VALLAURI - FOSSANO ------</p>
+        </footer>
+    </body>
+</html>
